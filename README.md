@@ -2,7 +2,7 @@
 This is a feature-rich, full-stack web application designed for multi-user task management. It features real-time data synchronization, an interactive data visualization dashboard, and robust user account management, all powered by a Firebase backend.
 
 ✨ Live Demo
-[Link to your live demo will go here once the project is deployed.]
+https://shubhankar0204.github.io/Task-Management/
 
 🚀 Key Features
 This application goes beyond a simple to-do list, offering a comprehensive set of features for an enhanced user experience:
