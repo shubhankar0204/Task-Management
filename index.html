@@ -17,6 +17,7 @@
             font-family: 'Inter', sans-serif; 
             transition: background-color 0.3s, color 0.3s; 
             background-color: #f8fafc;
+            color: #1f2937; 
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         .main-card, .auth-card { 
@@ -45,9 +46,11 @@
         .list-item {
              color: #1e40af;
         }
-        #list-title, #settings-view h2, #settings-view h3, #dashboard-view h2 { color: #1f2937; }
         
-        /* FIX: Ensure all inputs have light background and dark text in light mode */
+        #auth-container h2 { color: #1f2937;}
+        #auth-container label { color: #4b5563;}
+        #auth-container p { color: #4b5563;}
+
         input {
              color: #111827;
              background-color: #f9fafb;
@@ -78,11 +81,11 @@
         .dark h2.list-header, .dark .list-item { 
             color: #e5e7eb; 
         }
-        .dark .list-item.active { 
-            color: #ffffff; 
-        }
-        .dark #list-title, .dark #settings-view h2, .dark #settings-view h3, .dark #dashboard-view h2 { color: #f9fafb; }
         
+        .dark #auth-container h2 { color: #ffffff;}
+        .dark #auth-container label { color: #d1d5db;}
+        .dark #auth-container p { color: #9ca3af;}
+
         .dark input {
             color: #e5e7eb;
             background-color: #1e293b;
@@ -103,44 +106,44 @@
     <div id="auth-container">
         <div id="login-view" class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
             <div class="auth-card max-w-md w-full p-8 rounded-xl shadow-lg">
-                <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Welcome Back!</h2>
+                <h2 class="text-3xl font-bold text-center mb-6">Welcome Back!</h2>
                 <form id="login-form">
                     <div class="mb-4">
-                        <label for="login-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                        <label for="login-email" class="block text-sm font-medium">Email</label>
                         <input type="email" id="login-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div class="mb-6">
-                        <label for="login-password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                        <label for="login-password" class="block text-sm font-medium">Password</label>
                         <input type="password" id="login-password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <p id="login-error" class="text-red-500 text-sm mb-4 h-5"></p>
                     <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform transform hover:scale-105">Log In</button>
                 </form>
-                <p class="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
+                <p class="mt-4 text-center text-sm">
                     Don't have an account? <a href="#" id="show-signup" class="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a>
                 </p>
             </div>
         </div>
         <div id="signup-view" class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4 hidden">
              <div class="auth-card max-w-md w-full p-8 rounded-xl shadow-lg">
-                <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">Create Account</h2>
+                <h2 class="text-3xl font-bold text-center mb-6">Create Account</h2>
                 <form id="signup-form">
                      <div class="mb-4">
-                        <label for="signup-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Display Name</label>
+                        <label for="signup-name" class="block text-sm font-medium">Display Name</label>
                         <input type="text" id="signup-name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div class="mb-4">
-                        <label for="signup-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                        <label for="signup-email" class="block text-sm font-medium">Email</label>
                         <input type="email" id="signup-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div class="mb-6">
-                        <label for="signup-password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+                        <label for="signup-password" class="block text-sm font-medium">Password</label>
                         <input type="password" id="signup-password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <p id="signup-error" class="text-red-500 text-sm mb-4 h-5"></p>
                     <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform transform hover:scale-105">Sign Up</button>
                 </form>
-                <p class="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
+                <p class="mt-4 text-center text-sm">
                     Already have an account? <a href="#" id="show-login" class="font-medium text-indigo-600 hover:text-indigo-500">Log in</a>
                 </p>
             </div>
@@ -207,16 +210,16 @@
                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="space-y-8">
                         <div class="main-card rounded-2xl p-6">
-                            <h2 class="text-2xl font-bold mb-4">Task Status Overview</h2>
+                            <h2 class="text-2xl font-bold">Task Status Overview</h2>
                             <div class="h-64 flex items-center justify-center"><canvas id="tasks-pie-chart"></canvas></div>
                         </div>
                         <div class="main-card rounded-2xl p-6">
-                            <h2 class="text-2xl font-bold mb-4">Tasks per List</h2>
+                            <h2 class="text-2xl font-bold">Tasks per List</h2>
                             <div class="h-64 flex items-center justify-center"><canvas id="tasks-bar-chart"></canvas></div>
                         </div>
                     </div>
                     <div class="main-card rounded-2xl p-6">
-                        <h2 class="text-2xl font-bold mb-4">Search Tasks by Date</h2>
+                        <h2 class="text-2xl font-bold">Search Tasks by Date</h2>
                         <div class="flex flex-col sm:flex-row gap-4 mb-4">
                             <input type="date" id="search-start-date" class="w-full p-2 border rounded border-gray-200 dark:border-slate-600">
                             <input type="date" id="search-end-date" class="w-full p-2 border rounded border-gray-200 dark:border-slate-600">
@@ -228,7 +231,7 @@
             </div>
             <div id="settings-view" class="hidden">
                 <div class="max-w-2xl mx-auto main-card rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold mb-8">Settings</h2>
+                    <h2 class="text-3xl font-bold">Settings</h2>
                     <div class="space-y-8">
                          <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-4">
                             <label for="display-name" class="md:col-span-1 text-sm font-medium text-gray-700 dark:text-gray-300">Display Name</label>
@@ -245,7 +248,7 @@
                         </div>
                         <div class="border-t border-gray-200 dark:border-slate-700"></div>
                         <div>
-                            <h3 class="text-lg font-medium mb-2">Data Management</h3>
+                            <h3 class="text-lg font-medium">Data Management</h3>
                              <button id="export-data-btn" class="w-full bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 py-2 px-4 rounded-md hover:bg-green-200 dark:hover:bg-green-900/80 mb-4">Export My Data as JSON</button>
                             <button id="delete-account-btn" class="w-full bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300 py-2 px-4 rounded-md hover:bg-red-200 dark:hover:bg-red-900/80">Delete My Account and All Data</button>
                         </div>
